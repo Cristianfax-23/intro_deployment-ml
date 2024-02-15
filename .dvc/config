@@ -1,0 +1,4 @@
+[core]
+    remote = datafile
+['remote "datafile"']
+    url = gs://mlops-225c6.appspot.com/dataset
