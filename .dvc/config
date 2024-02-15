@@ -2,3 +2,5 @@
     remote = datafile
 ['remote "datafile"']
     url = gs://mlops-225c6.appspot.com/dataset
+['remote "models_track"']
+    url = gs://mlops-225c6.appspot.com/model
