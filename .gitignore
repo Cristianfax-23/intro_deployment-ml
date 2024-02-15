@@ -1,6 +1,5 @@
 *.json
 *.pkl
 /env
-/data
 *.csv
 /notebooks
