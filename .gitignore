@@ -6,4 +6,4 @@
 *.ipynb
 *.png
 __pycache__
-*.txt
+report.txt
