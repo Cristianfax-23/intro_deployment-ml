@@ -3,3 +3,7 @@
 /env
 *.csv
 /notebooks
+*.ipynb
+*.png
+__pycache__
+*.txt
