@@ -8,6 +8,8 @@ jobs:
     steps: 
       - name: Checkout the repo
         uses: actions/checkout@v3
+        with:
+          python: 3.10.12
       - name: Creating and activating virtualenv
         run: |
           python3 -m venv env
