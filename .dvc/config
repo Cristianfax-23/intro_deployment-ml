@@ -4,3 +4,5 @@
     url = gs://mlops-225c6.appspot.com/dataset
 ['remote "models_track"']
     url = gs://mlops-225c6.appspot.com/model
+['remote "storage_google_drive"']
+    url = gdrive://1Sm2pWKYWZJdfrT0f3wbPzkwtkAn7DJbG/path/to/folder
