@@ -8,16 +8,14 @@ jobs:
     steps: 
       - name: Checkout the repo
         uses: actions/checkout@v3
-        with: 
-          python-version: 3.8
       - name: Creating and activating virtualenv
         run: |
-          pip3 install virtualenv
-          virtualenv venv
-          source venv/bin/activate
+          python3 -m venv env
+          source env/bin/activate
       - name: Installing dependecies
         run: |
           pip install dvc_gs
+          pip install dvc
           pip install -r requirements_test.txt
       - name: Test API
         run: |
