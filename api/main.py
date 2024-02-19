@@ -5,6 +5,6 @@ from .app.views import get_prediction
 
 app = FastAPI(docs_url='/')
 
-@app.post('/v1/prediciton')
+@app.post('/v1/prediction')
 def make_model_prediciton(request: PredictionRequest):
-    return PredictionRequest(worldwide_gross=get_prediction(request))
+    return PredictionResponse(worldwide_gross=get_prediction(request))

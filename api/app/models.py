@@ -11,6 +11,5 @@ class PredictionRequest(BaseModel):
     budget: float
     imdb_score: float
 
-
 class PredictionResponse(BaseModel):
     worldwide_gross: float
