@@ -16,7 +16,6 @@ jobs:
           source env/bin/activate
       - name: Installing dependecies
         run: |
-          pip install scikit-learn==1.0
           pip install dvc_gs
           pip install dvc
           pip install -r requirements_test.txt
