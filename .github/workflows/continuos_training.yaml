@@ -59,8 +59,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cat report.txt >> report.md
-          ruta_completa="$(pwd)/prediction_behavior.png"
-          echo '![]($ruta_completa)' >> report.md
+          echo '![](./prediction_behavior.png)' >> report.md
           cat report.md
           cml comment create report.md
           
