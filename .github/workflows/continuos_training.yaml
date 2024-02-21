@@ -22,10 +22,10 @@ jobs:
         env:
           SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
         run: |
-          pip install virtualenv
+          pip3 install virtualenv
           virtualenv env
           source env/bin/activate
-          pip install -r src/requirements.txt
+          pip3 install -r src/requirements.txt
           export GOOGLE_APPLICATION_CREDENTIALS=$(python3 Utilities/setter.py)
           dvc pull model/model.pkl.dvc -r models_track
           dvc unprotect model/model.pkl
