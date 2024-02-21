@@ -1,12 +1,12 @@
 name: continuos training
+permissions:  
+  contents: write
 on:
   push:
     branches:
       -  workflows_continuos_training
   schedule:
     - cron: '0 */6 * * *'
-  permissions:  
-    - contents: write
   workflow_dispatch:
     inputs:
       reason:
