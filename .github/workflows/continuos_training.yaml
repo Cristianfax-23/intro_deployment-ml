@@ -61,5 +61,6 @@ jobs:
           cat report.txt >> report.md
           ruta_completa="$(pwd)/prediction_behavior.png"
           echo '![]($ruta_completa)' >> report.md
+          cat report.md
           cml comment create report.md
           
