@@ -59,4 +59,4 @@ jobs:
           echo "# Model Training Report" > report.md
           echo "![prediction behavior](./prediction_behavior.png)" >> report.md
           cml comment create report.md
-          
+        working-directory: ${{ github.workspace }}
