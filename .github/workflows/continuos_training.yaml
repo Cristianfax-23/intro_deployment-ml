@@ -56,5 +56,5 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cat report.txt >> report.md
-          echo "![Texto alternativo](imagen.jpg)" >> archivo.md
+          echo "![](prediciton_behavior.png)" >> archivo.md
           cml-send-comment report.md
