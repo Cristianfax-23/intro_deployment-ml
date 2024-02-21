@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Train model
         env:
           SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
@@ -30,15 +30,15 @@ jobs:
           dvc unprotect model/model.pkl
           dvc repro -f
           echo 'Training Completed'
-          dvc add model/model.pkl.dvc model_track -r --to-remote
-          dvc push model/model.pkl.dvc -r model_track
+          dvc add model/model.pkl model_track -r --to-remote
+          dvc push model/model.pkl -r model_track
       - name: Commit .dvc file changes
         run: |
           git config --local user.email "cristiantoronavarro.fax@gmail.com"
           git config --local user.name "github-actions[bot]"
-          git add model/model.pkl.dvc
+          git add model/model.pkl
           git commit -m " Updating model serialization"
-      - uses: ad-m/giyhub-push-action@master
+      - uses: ad-m/github-push-action@master
         with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             branch: ${{ github.ref }}
