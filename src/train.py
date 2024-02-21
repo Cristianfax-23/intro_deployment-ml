@@ -19,7 +19,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 logger.info('Loading data...')
-data = pd.read_csv('../data/full_data.csv')
+data = pd.read_csv('data/full_data.csv')
 
 logger.info('Loading model...')
 model = Pipeline([
