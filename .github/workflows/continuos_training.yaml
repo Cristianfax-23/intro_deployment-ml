@@ -29,12 +29,12 @@ jobs:
           source venv/bin/activate
           pip install -r src/requirements.txt
           export GOOGLE_APPLICATION_CREDENTIALS=$(python3 Utilities/setter.py)
-          dvc pull model/model.pkl.dvc -r models_track
-          dvc unprotect model/model.pkl
+          dvc pull model/model.pkl -r models_track
+          dvc unprotect model/model.pkl.dvc
           dvc repro -f
           echo 'Training Completed'
-          dvc add model/model.pkl -r models_track --to-remote
-          dvc push model/model.pkl.dvc -r models_track
+          dvc add model/model.pkl -r models_track
+          dvc push model/model.pkl -r models_track
       - name: Commit .dvc file changes
         run: |
           git config --local user.email "thegameprox777.13@gmail.com"
@@ -43,8 +43,11 @@ jobs:
           git commit -m " Updating model serialization"
       - uses: ad-m/github-push-action@master
         with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            branch: ${{ github.ref }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+          force: true
+        env:
+          DEBUG: true
       - uses: iterative/setup-cml@v1
       - name: Push metrics
         env:
