@@ -18,14 +18,15 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+        with:
+          python: 3.10.12
       - name: Train model
         env:
           SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
         run: |
-          pip3 install virtualenv
-          virtualenv env
+          python -m venv env
           source env/bin/activate
-          pip3 install -r src/requirements.txt
+          pip install -r src/requirements.txt
           export GOOGLE_APPLICATION_CREDENTIALS=$(python3 Utilities/setter.py)
           dvc pull model/model.pkl.dvc -r models_track
           dvc unprotect model/model.pkl
