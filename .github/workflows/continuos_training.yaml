@@ -5,6 +5,8 @@ on:
       -  workflows_continuos_training
   schedule:
     - cron: '0 */6 * * *'
+  permissions:  
+    - contents: write
   workflow_dispatch:
     inputs:
       reason:
