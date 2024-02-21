@@ -1,11 +1,11 @@
 stages:
   prepare:
-    cmd: python3 src/prepare.py
+    cmd: python src/prepare.py
     deps:
     - src/prepare.py
     outs:
     - data/full_data.csv
   training:
-    cmd: python3 src/train.py
+    cmd: python src/train.py
     deps:
     - data/full_data.csv
