@@ -1,6 +1,10 @@
 name: continuos training
 permissions:  
+  id-token: write # need this for OIDC  
   contents: write
+  pull-requests: write 
+  issues: read
+  packages: none
 on:
   push:
     branches:
@@ -13,12 +17,6 @@ on:
         description: Why to run this?
         required: false
         default: running CT
-permissions:
-  id-token: write # need this for OIDC  
-  contents: write
-  pull-requests: write 
-  issues: read
-  packages: none
 jobs:
   continuos-training:
     runs-on: ubuntu-latest
