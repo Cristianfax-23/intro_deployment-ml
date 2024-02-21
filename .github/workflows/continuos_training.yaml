@@ -13,7 +13,12 @@ on:
         description: Why to run this?
         required: false
         default: running CT
-
+permissions:
+  id-token: write # need this for OIDC  
+  contents: write
+  pull-requests: write 
+  issues: read
+  packages: none
 jobs:
   continuos-training:
     runs-on: ubuntu-latest
@@ -56,7 +61,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cat report.txt >> report.md
-          echo "# Model Training Report" > report.md
-          echo "![prediction behavior](./prediction_behavior.png)" >> report.md
+          ruta_completa="$(pwd)/prediction_behavior.png"
+          echo '![]($ruta_completa)' >> report.md
           cml comment create report.md
-        working-directory: ${{ github.workspace }}
+          
