@@ -33,4 +33,4 @@ def get_model_perfomance_test_set(y_real:pd.Series ,Y_pred: pd.Series ) -> None:
     ax.set_xlabel('Predicted worldwide gross')
     ax.set_ylabel('Real worldwide gross')
     ax.set_title('Behavior of model prediction')
-    fig.savefig('prediciton_behavior.png')
+    fig.savefig('prediction_behavior.png')
