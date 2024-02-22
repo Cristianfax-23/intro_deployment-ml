@@ -61,6 +61,6 @@ jobs:
           cat report.txt >> report.md
           pwd
           ls
-          cml-publish prediction_behavior.png --md
+          cml-publish prediction_behavior.png --md >> report.md
           cml comment create report.md
           
