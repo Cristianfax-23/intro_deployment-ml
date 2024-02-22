@@ -61,6 +61,7 @@ jobs:
           cat report.txt >> report.md
           pwd
           ls
-          echo '![](/home/runner/work/intro_deployment-ml/intro_deployment-ml/prediction_behavior.png)' >> report.md
+          cml_publish_output=$(cml-publish prediction_behavior.png --md)
+          echo "${cml_publish_output}" >> report.md
           cml comment create report.md
           
