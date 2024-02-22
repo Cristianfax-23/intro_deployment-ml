@@ -60,6 +60,7 @@ jobs:
         run: |
           cat report.txt >> report.md
           pwd
-          list
+          ls
+          echo '![](/home/runner/work/intro_deployment-ml/intro_deployment-ml/prediction_behavior.png)' >> report.md
           cml comment create report.md
           
