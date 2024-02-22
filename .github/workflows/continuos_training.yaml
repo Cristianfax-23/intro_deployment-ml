@@ -58,9 +58,9 @@ jobs:
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          echo '![](./prediction_behavior.png)' > report.md
           cat report.txt >> report.md
           pwd
           ls
-          cml-publish ./prediction_behavior.png --md >> report.md
           cml comment create report.md
           
